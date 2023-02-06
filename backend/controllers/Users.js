@@ -55,7 +55,7 @@ export const Login = async (req, res) => {
 
 		// simpan di database
 		await Users.update(
-			{ refreshToken: refreshToken },
+			{ refresh_token: refreshToken },
 			{
 				where: {
 					id: userId,
