@@ -1,5 +1,5 @@
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSYWZsaSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjc1NjU4NzAyLCJleHAiOjE2NzU2NTg3MjJ9.5n-qrzV6HxKnznZeb18y8RuK1WfGQBKZeXgV3EnRGM4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSYWZsaSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjc1NjYwMzM3LCJleHAiOjE2NzU2NjAzNTJ9.9AGa6UAaz6ySMC83W4N7qMHWi_O3Rd370AnFvcTd6gI
 
 ###
 POST  http://localhost:5000/users
@@ -20,3 +20,6 @@ Content-Type: application/json
   "email": "email@gmail.com",
   "password": "12345"
 }
+
+###
+GET  http://localhost:5000/token
