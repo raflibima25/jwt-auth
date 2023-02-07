@@ -6,7 +6,7 @@ const Dashboard = () => {
 		<div>
 			<Navbar />
 			<div className='container mt-5'>
-				<h1 className='title'>Welkom Bek: </h1>
+				<h1>Welkom Bek: </h1>
 			</div>
 		</div>
 	);
