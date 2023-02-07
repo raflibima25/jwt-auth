@@ -1,9 +1,13 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 const Dashboard = () => {
 	return (
 		<div>
-			<h1 className='title'>Welkom Bek: </h1>
+			<Navbar />
+			<div className='container mt-5'>
+				<h1 className='title'>Welkom Bek: </h1>
+			</div>
 		</div>
 	);
 };
