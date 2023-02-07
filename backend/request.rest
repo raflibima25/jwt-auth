@@ -1,7 +1,8 @@
+### GET DATA
 GET http://localhost:5000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSYWZsaSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjc1NjYwMzM3LCJleHAiOjE2NzU2NjAzNTJ9.9AGa6UAaz6ySMC83W4N7qMHWi_O3Rd370AnFvcTd6gI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJSYWZsaSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjc1NzQ3NjU4LCJleHAiOjE2NzU3NDc2Nzh9.DxxWvoj3pLkSE5GlR12oiI27peDukIFw8x6b_Ttb4m0
 
-###
+### REGISTER
 POST  http://localhost:5000/users
 Content-Type: application/json
 
@@ -12,7 +13,7 @@ Content-Type: application/json
   "confPassword": "12345"
 }
 
-###
+### LOGIN
 POST  http://localhost:5000/login
 Content-Type: application/json
 
@@ -21,5 +22,8 @@ Content-Type: application/json
   "password": "12345"
 }
 
-###
+### GET TOKEN
 GET  http://localhost:5000/token
+
+### LOGOUT
+DELETE http://localhost:5000/logout
