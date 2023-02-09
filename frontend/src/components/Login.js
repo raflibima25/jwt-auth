@@ -1,23 +1,48 @@
 import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [msg, setMsg] = useState("");
+
+	const navigate = useNavigate();
+
+	const Auth = async (e) => {
+		e.preventDefault();
+		try {
+			await axios.post("http://localhost:5000/login", {
+				email: email,
+				password: password,
+			});
+			navigate("/dashboard");
+		} catch (error) {
+			if (error.response) {
+				setMsg(error.response.data.msg);
+			}
+		}
+	};
+
 	return (
 		<section class='hero has-background-grey-light is-fullheight is-fullwidth'>
 			<div class='hero-body'>
 				<div class='container'>
 					<div className='columns is-centered'>
 						<div className='column is-4-desktop'>
-							<form className='box'>
+							<form className='box' onSubmit={Auth}>
+								<p className='has-text-centered'>{msg}</p>
 								<div className='field mt-5'>
 									<label className='label'>Email or Username</label>
 									<div className='controls'>
-										<input type='text' className='input' placeholder='Username' />
+										<input type='text' className='input' placeholder='Username' value={email} onChange={(e) => setEmail(e.target.value)} />
 									</div>
 								</div>
 								<div className='field mt-5'>
 									<label className='label'>Password</label>
 									<div className='controls'>
-										<input type='password' className='input' placeholder='*****' />
+										<input type='password' className='input' placeholder='*****' value={password} onChange={(e) => setPassword(e.target.value)} />
 									</div>
 								</div>
 								<div className='field mt-5'>
