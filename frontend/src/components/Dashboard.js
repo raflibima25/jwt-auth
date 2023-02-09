@@ -8,6 +8,9 @@ import Navbar from "./Navbar";
 const Dashboard = () => {
 	const [name, setName] = useState("");
 	const [token, setToken] = useState("");
+	const [expire, setExpire] = useState("");
+
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		refreshToken();
@@ -19,7 +22,12 @@ const Dashboard = () => {
 			setToken(response.data.accessToken);
 			const decoded = jwt_decode(response.data.accessToken);
 			setName(decoded.name);
-		} catch (error) {}
+			setExpire(decoded.exp);
+		} catch (error) {
+			if (error.response) {
+				navigate("/");
+			}
+		}
 	};
 
 	return (
